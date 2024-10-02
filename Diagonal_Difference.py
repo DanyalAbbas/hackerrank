@@ -6,10 +6,9 @@ arr = [  [1, 2, 3],
 def foo(arr : list[int]) -> int:
     add1 = 0
     add2 = 0
-    for pos, i in enumerate(arr):
-        add1 += i[pos]
-    for pos, i in enumerate(arr[::-1]):
-        add2 += i[pos]
+    for i in range(len(arr)):
+        add1 += arr[i][i]
+        add2 += arr[i][len(arr)-1-i]
     
     return abs(add1 - add2)
 
